@@ -1,0 +1,11 @@
+<!--<h3>Fiessssshhhhta !!!! Abre ya la botella omee no te me hagas de rogar </h3> -->
+
+{{titulo}}<br/>
+{{request.user}}
+<hr/>
+<br/>
+
+<form method="POST" action="">{% csrf_token %}
+{{el_form.as_p}}
+<input type='submit' value='Pulsar para Registrar'/>
+</form>
