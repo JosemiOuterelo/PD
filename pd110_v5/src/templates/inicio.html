@@ -1,0 +1,50 @@
+ {%extends "base.html"%}
+ {%load crispy_forms_tags%}
+
+{%block head_title%}Welcome New Palace/{{block.super}}{%endblock%}
+
+ {%block jumbotron%}
+ <div class="jumbotron">
+    
+ <div class='row'>
+ 	<div class='col-sm-6'>
+ <h1>Probando DJANGO DESENCADENADO 1.10</h1>
+        <p>QUIEROOOO !!! MONTARME EN TU VELEROOOO!!! PONERME EL SOMBREOOOO!!! Y HACERNOS ESO AY AY AY AYYYYYYY!!!!!</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">ECHA PAKA &raquo;</a>
+        </p>
+</div>
+<div class='col-sm-6' style='background-color:black;height:300px;'></div>
+</div>
+</div>
+ {%endblock%}
+
+
+
+
+{{titulo}}<br/>
+{{request.user}}
+<hr/>
+<br/>
+
+{%block content %}
+<div class='row'>
+ 	<div class='col-sm-3 pull-right'>
+ 		<p class='lead text-align-center'>{{titulo}}</p>
+<form method="POST" action="">{% csrf_token %}
+{{el_form|crispy}}
+<input type='submit' value='Pulsar para Registrar'/>
+</form>
+</div>
+<div class='col-sm-3'>
+	<p class='lead text-align-center'> Creado por el puto amo </p>
+	<p class='lead text-align-center'> Pa to mi gente </p>
+	<p class='lead text-align-center'> Siempre presente YEAH </p>
+</div>
+</div>
+
+
+
+
+<hr/>
+{%endblock%}
