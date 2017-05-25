@@ -1,0 +1,92 @@
+ {%extends "base.html"%}
+ {%load crispy_forms_tags%}
+
+{%block head_title%}Welcome New Palace/{{block.super}}{%endblock%}
+
+<style>
+
+{%block style%}
+.jumbotron{
+	background-color: #172548 !important;
+	color:#FFF !important;
+}
+
+.fa-5x{
+	font-size: :6em;
+}
+
+{%endblock%}
+
+</style>
+
+ {%block jumbotron%}
+
+
+{%if request.user.is_staff%}
+<table class='table'>
+{%for instance in queryset%}
+<tr><td>{{instance}}</td><td>{{instance.nombre}}</td><td>hace {{instance.timestamp|timesince}}</td></tr><br/>
+{%endfor%}
+</table>
+{%else%}
+
+ <div class="jumbotron">
+ <div class="container">
+ <div class='row'>
+ 	<div class='col-sm-6'>
+ <h1><strong></strong>Probando DJANGO DESENCADENADO 1.10</strong></h1>
+        <p>QUIEROOOO !!! MONTARME EN TU VELEROOOO!!! PONERME EL SOMBREOOOO!!! Y HACERNOS ESO AY AY AY AYYYYYYY!!!!!</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">ECHA PAKA &raquo;</a>
+        </p>
+</div>
+<div class='col-sm-6' style='background-color:black;height:315px;'><iframe width="560" height="315" src="https://www.youtube.com/embed/udeIkz4w354?ecver=1" frameborder="0" allowfullscreen></iframe></div>
+</div>
+</div>
+</div>
+{%endif%}
+ {%endblock%}
+
+
+
+
+{{titulo}}<br/>
+{{request.user}}
+<hr/>
+<br/>
+
+{%block content %}
+{%if not rquest.user.is_staff%}
+<div class='row'>
+ 	<div class='col-sm-3 pull-right'>
+ 		<p class='lead text-align-center'>Subscribirte</p>
+		{%if not user.is_authenticated%}
+<form method="POST" action="">{% csrf_token %}
+{{el_form|crispy}}
+<input type='submit' value='Pulsar para Registrar'/>
+</form>
+{%else%}
+<p class='lead text-align-center'>{{titulo}}<br/><br/><i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
+		{%endif%}
+</div>
+<div class='col-sm-3'>
+	<p class='lead text-align-center'> Creado por el puto amo <br/><i class="fa fa-bullhorn fa-3x" style="color:green" aria-hidden="true"></i></p>
+</div>
+<div class='col-sm-3'>
+	<p class='lead text-align-center'> Pa to mi gente</p>
+</div>
+<div class='col-sm-3'>
+	<p class='lead text-align-center'> Siempre presente YEAH<br/><br/><span class="fa-stack fa-5x">
+	<i class="fa fa-spinner fa-spin fa-satck-2x"></i>
+	<i class="fa fa-twitter fa-stack-1x" style="color:#47n78c"></i>
+</spam></i>
+	</p>
+</div>
+</div>
+
+
+
+
+<hr/>
+{%endif%}
+{%endblock%}
